@@ -1,0 +1,49 @@
+header{
+  background-color: blue;
+  color:white;
+  font-family: sans-serif;
+}
+
+h1{
+  margin:0px;
+}
+
+nav{
+  background-color: #d3d3d3 ;
+  padding: 8px;
+  border-color: black;
+  border-radius: 5px;
+  border: 5px;
+
+}
+
+
+
+h2{
+  border: 1.2px solid black;
+  background-color: blue;
+  color: white;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+h4{
+  border: 1.2px solid black;
+  background-color: blue;
+  color: white;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+footer{
+  background-color: blue;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  border: 1.2px solid black;
+  padding: 10px;
+}
