@@ -43,14 +43,14 @@
 
       <div class="col-lg-12 col-md-12 col-sm-12 col-12">
 
-        <table class="table">
-         <tr>
+        <table class="table" id="mytable">
+         <thead>
            <th>Title</th>
            <th>Author</th>
            <th>Year Published</th>
            <th>Page Count</th>
            <th>MSRP</th>
-         </tr>
+         </thead>
          <tr>
            <td>Gone With the Wind</td>
            <td>Margaret Mitchell</td>
@@ -120,4 +120,9 @@
     </footer>
     </div>
   </body>
+  <script src='js/tablesort.min.js'></script>
+
+  <script>
+    new Tablesort(document.getElementById('mytable'));
+  </script>
 </html>
