@@ -10,6 +10,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <div class="col-6">
     <title>Naomi Moreno </title>
+    <script src="https://unpkg.com/vue@next"></script>
+
     </div>
     <div class="col-6">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -17,7 +19,7 @@
 
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="sidApp">
       <header class="row">
         <h1>  Naomi Moreno </h1>
       </header>
@@ -44,25 +46,30 @@
       <div class="col-lg-8 col-md-7 col-sm-12 col-12">
 
         <br>
-        Name: Naomi Moreno<br>
-        Country: United States of America <br>
-        Age: 41 <br>
-        Email Address: <a href="mailto:naomimorenoisfake@iu.edu">naomimorenoisfake@iu.edu</a>
+
+        Name: {{result.name.first}} {{result.name.last}}<br>
+        Country: {{result.location.country}}<br>
+        Age: {{result.dob.age}} <br>
+        DOB: {{prettyBirthday}} <br>
+
+        Email Address: <a href="'mailto:'+result.email">{{result.email}}</a>
 
       </div>
 
       <div class="col-lg-4  col-md-5 col-sm-12 col-12">
 
-        <a target="_blank" href="img/naomi.jpg">
-          <img src="img/naomi.jpg" alt="Profile Picture" style="width:250px">
-        </a>
+
+          <img v-bind:src="result.picture.large" alt="Profile Picture">
+
       </div>
     </main>
 
 
     <footer class="myfooter">
-      Naomi Moreno | Phone: (253)-913-0277 | 3558 Prospect Rd
+      {{result.name.first}} {{result.name.last}} | Phone: {{result.phone}} | 3558 Prospect Rd
     </footer>
     </div>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
