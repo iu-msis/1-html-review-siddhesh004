@@ -44,6 +44,9 @@
     <main class="row">
 
       <div class="col-lg-8 col-md-7 col-sm-12 col-12">
+        <form v-on:submit.prevent="fetchUserData">
+              <button type="submit">Refresh</button>
+        </form>
 
         <br>
 
