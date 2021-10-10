@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <div class="col-6">
     <title>Naomi Moreno </title>
+    <script src="https://unpkg.com/vue@next"></script>
     </div>
     <div class="col-6">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -41,7 +42,8 @@
 
     <main class="row">
 
-      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12" id="bookApp">
+
 
         <table class="table" id="mytable">
          <thead>
@@ -51,41 +53,15 @@
            <th>Page Count</th>
            <th>MSRP</th>
          </thead>
-         <tr>
-           <td>Gone With the Wind</td>
-           <td>Margaret Mitchell</td>
-           <td>1936</td>
-           <td>1037</td>
-           <td>$14.79</td>
-         </tr>
-         <tr>
-           <td>The Girl On The Train</td>
-           <td>Paula Hawkins</td>
-           <td>2015</td>
-           <td>316</td>
-           <td>$7.48</td>
-         </tr>
-         <tr>
-           <td>The Little Prince</td>
-           <td>Antoine de Saint-Exupéry</td>
-           <td>1943</td>
-           <td>140</td>
-           <td>$5.99</td>
-         </tr>
-         <tr>
-           <td>Dream of the Red Chamber</td>
-           <td>Cao Xueqin</td>
-           <td>1789</td>
-           <td>2339</td>
-           <td>$19.25</td>
-         </tr>
-         <tr>
-           <td>And Then There Were None</td>
-           <td>Agatha Christie</td>
-           <td>1939</td>
-           <td>272</td>
-           <td>$8.60</td>
-         </tr>
+         <tbody>
+           <tr v-for="book in books">
+                          <td>{{ book.title }}</td>
+                          <td>{{ book.author }}</td>
+                          <td>{{ book.year_pub }}</td>
+                          <td>{{ book.pages }}</td>
+                          <td>{{ prettyDollar(book.msrp) }}</td>
+          </tr>
+       </tbody>
         </table>
 
 
@@ -121,6 +97,9 @@
     </div>
   </body>
   <script src='js/tablesort.min.js'></script>
+  <script src="js/index.js"></script>
+    <script src="js/books.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
   <script>
     new Tablesort(document.getElementById('mytable'));

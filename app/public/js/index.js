@@ -13,6 +13,10 @@ const MountApp = {
         }
     },
     methods: {
+      prettyDollar(n) {
+        const d = new Intl.NumberFormat("en-US").format(n);
+        return "$ " + d;
+    },
         fetchUserData() {
             //Method 1:
             fetch('https://randomuser.me/api/')
@@ -26,8 +30,20 @@ const MountApp = {
             });
         }
     },
+    fetchBookData() {
+          fetch('/api/books')
+          .then( response => response.json() )
+          .then( (responseJson) => {
+              console.log(responseJson);
+              this.books = responseJson;
+          })
+          .catch( (err) => {
+              console.error(err);
+          })
+      },
     created() {
         this.fetchUserData();
+        // this.fetchBookData();
     }
 
   }
