@@ -66,23 +66,24 @@
 
 
 
-      </div>
 
 
-        <form action="#">
-          <div class="form-group">
-          <label for="name">Book Name:</label><br>
-          <input type="text" id="name" name="name" value=""><br>
-          <label for="aname">Author Name:</label><br>
-          <input type="text" id="aname" name="aname" value=""><br>
-          <label for="year">Year:</label><br>
-          <input type="text" id="year" name="year" value=""><br>
+
+        <form v-on:submit.prevent="postNewBook">
+
+          <label for="title">Book Title:</label><br>
+          <input type="text" v-model="bookForm.title"  class="form-control" id="title" name="title"><br>
+          <label for="author">Author Name:</label><br>
+          <input type="text" v-model="bookForm.author"  class="form-control" id="author" name="author"><br>
+          <label for="year_pub">Year:</label><br>
+          <input type="text" v-model="bookForm.year_pub"  class="form-control" id="year_pub" name="year_pub"><br>
           <label for="pages">Page Count:</label><br>
-          <input type="text" id="pages" name="pages" value=""><br>
+          <input type="text" v-model="bookForm.pages"  class="form-control" id="pages" name="pages" ><br>
           <label for="msrp">MSRP:</label><br>
-          <input type="text" id="msrp" name="msrp" value=""><br><br>
-          <input type="submit" value="Submit"><br>
+          <input type="text" v-model="bookForm.msrp"  class="form-control" id="msrp" name="msrp" ><br><br>
+          <button type="submit" class="btn btn-primary" name = "button" id = "button">Submit</button>
         </form>
+
 
       </div>
 
@@ -96,10 +97,11 @@
     </footer>
     </div>
   </body>
-  <script src='js/tablesort.min.js'></script>
-  <script src="js/index.js"></script>
-    <script src="js/books.js"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src='js/tablesort.min.js'></script>
+  <!-- <script src="js/index.js"></script> -->
+  <script src="js/books.js"></script>
+
 
   <script>
     new Tablesort(document.getElementById('mytable'));
